@@ -16,8 +16,6 @@ export class ArrayFormComponent implements OnInit{
   constructor(private fb: FormBuilder, private fa: FormArray){
   };
 
-  phone : FormGroup[];
-
   ngOnInit(){
     
     const phone : FormGroup = this.fb.group({

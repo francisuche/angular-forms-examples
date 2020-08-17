@@ -20,7 +20,7 @@ export class BasicFormComponent implements OnInit{
 
     this.myForm = this.fb.group({  //schema that defines the validation stauts and fields in your form
       email: '',
-      message: 'default message',
+      message: '',
       career: ''
     });
 

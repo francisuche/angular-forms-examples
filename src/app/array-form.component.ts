@@ -47,8 +47,8 @@ export class ArrayFormComponent implements OnInit{
       this.PhoneForms.push(newPhone);
     }
 
-    deletePhone(){
-      
+    deletePhone(i){
+            this.PhoneForms.removeAt(i);
     }
 
 }

@@ -8,7 +8,7 @@ import { BasicFormComponent} from './basic-form.component';
 // import { ArrayFormComponent} from './array-form.component';
 // import { ValidFormComponent} from './valid-form.component';
 // import { SubmitFormComponent} from './submit-form.component';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
@@ -21,6 +21,7 @@ import {MatChipsModule} from '@angular/material/chips';
   imports: [ 
     BrowserModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     // Import of the angular-material angular module
     AngularMaterialModule,
     MatInputModule,

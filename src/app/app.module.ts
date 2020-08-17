@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BasicFormComponent} from './basic-form.component';
 import { NestedFormComponent} from './nested-form.component';
 import { ArrayFormComponent} from './array-form.component';
-// import { ValidFormComponent} from './valid-form.component';
+import { ValidFormComponent} from './valid-form.component';
 // import { SubmitFormComponent} from './submit-form.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule, MatSelectModule, MatButtonModule, MatCheckboxModule, MatChipsModule } from '@angular/material';
@@ -26,7 +26,8 @@ import {MatInputModule, MatSelectModule, MatButtonModule, MatCheckboxModule, Mat
     AppComponent,
     BasicFormComponent,
     NestedFormComponent,
-    ArrayFormComponent
+    ArrayFormComponent,
+    ValidFormComponent
   ],
   bootstrap: [
     AppComponent

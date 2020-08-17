@@ -13,20 +13,18 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class NestedFormComponent implements OnInit{
 
   myForm : FormGroup;
-  constructor(private fb: FormBuilder){
-  };
+  constructor(private fb: FormBuilder){};
 
   //phone : FormGroup[];
 
   ngOnInit(){
-
     const phone : FormGroup = this.fb.group({
       area: [],
       prefix: [],
       line : []
     })
 
-    this.myForm = this.fb.group({  //schema that defines the validation stauts and fields in your form
+    this.myForm = this.fb.group({  
       email: '',
       homePhone : phone,
       cellPhone : phone

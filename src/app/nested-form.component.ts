@@ -16,12 +16,20 @@ export class NestedFormComponent implements OnInit{
   constructor(private fb: FormBuilder){
   };
 
+  phone : FormGroup[];
+
   ngOnInit(){
+
+    const phone : FormGroup = this.fb.group({
+      area: [],
+      prefix: [],
+      line : []
+    })
 
     this.myForm = this.fb.group({  //schema that defines the validation stauts and fields in your form
       email: '',
-      message: '',
-      career: ''
+      homePhone : phone,
+      cellPhone : phone
     });
 
     this.myForm.valueChanges.subscribe(console.log)

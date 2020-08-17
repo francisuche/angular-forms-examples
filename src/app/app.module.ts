@@ -9,12 +9,25 @@ import { BasicFormComponent} from './basic-form.component';
 // import { ValidFormComponent} from './valid-form.component';
 // import { SubmitFormComponent} from './submit-form.component';
 
+import {MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+
+
+
 @NgModule({
   imports: [ 
     BrowserModule,
     ReactiveFormsModule,
     // Import of the angular-material angular module
-    AngularMaterialModule
+    AngularMaterialModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatChipsModule
   ],
   declarations: [
     AppComponent,

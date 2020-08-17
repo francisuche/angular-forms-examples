@@ -15,22 +15,21 @@
 <h1> Phone </h1>
 <button  (click) = "addNewPhone()" style= "margin-bottom : 20px"> Add new Phone </button>
 
-<    *ngFor = "let phone of Phones">
-<h1> Phone1 </h1>
-<div formGroupName =  "{{phone + }}">
-    <mat-form-field appearance="fill">
-      <input matInput placeholder = "area" formControlName = "area">
-    </mat-form-field>
+<div *ngFor = "let phone of PhoneForms">
+  <h1> Phone1 </h1>
+  <div formGroupName =  "{{phone + }}">
+      <mat-form-field appearance="fill">
+        <input matInput placeholder = "area" formControlName = "area">
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <input matInput placeholder = "prefix" formControlName = "prefix">
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder = "prefix" formControlName = "prefix">
+      </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <input matInput placeholder = "line" formControlName = "line">
-    </mat-form-field>
+      <mat-form-field appearance="fill">
+        <input matInput placeholder = "line" formControlName = "line">
+      </mat-form-field>
+  </div>
 </div>
-
-<
 
   </form>

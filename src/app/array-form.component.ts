@@ -9,11 +9,11 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
   templateUrl: './array-form.component.html',
   styleUrls: ['./array-form.component.css']
 })
-
 export class ArrayFormComponent implements OnInit{
 
   myForm : FormGroup;
-  constructor(private fb: FormBuilder, private fa: FormArray){
+  
+  constructor(private fb: FormBuilder){
   };
 
   ngOnInit(){

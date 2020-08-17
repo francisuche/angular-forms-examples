@@ -28,20 +28,27 @@ export class ArrayFormComponent implements OnInit{
 
     this.myForm = this.fb.group({  //schema that defines the validation stauts and fields in your form
       email : '',
-      phoneNumbers : this.fa.array({[]});
+      phones : this.fb.array([])
     });
     
     this.myForm.valueChanges.subscribe(console.log)
   }
 
-   addNewPhone(newPhone: any){
-      newPhone = this.fb.group({
+  get PhoneForms(){
+    return this.myForm.get('phones') as FormArray;
+  }
+
+   addNewPhone(){
+     const newPhone : FormGroup = this.fb.group({
         area: [],
         prefix: [],
         line : []
       });
+      this.PhoneForms.push(newPhone);
+    }
 
-      this.myForm.addControl();
+    deletePhone(){
+      
     }
 
 }

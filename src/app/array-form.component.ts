@@ -13,27 +13,28 @@ import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 export class ArrayFormComponent implements OnInit{
 
   myForm : FormGroup;
-  constructor(private fb: FormBuilder){
+  constructor(private fb: FormBuilder, phoneNumbers: phone[]){
   };
 
   phone : FormGroup[];
 
   ngOnInit(){
-
-    const phone : FormGroup = this.fb.group({
-      area: [],
-      prefix: [],
-      line : []
-    })
-
+    
     this.myForm = this.fb.group({  //schema that defines the validation stauts and fields in your form
-      email: '',
-      homePhone : phone,
-      cellPhone : phone
+      email: ''
     });
-
+    
     this.myForm.valueChanges.subscribe(console.log)
-
   }
+
+   addNewPhone(newPhone: any){
+      newPhone = this.fb.group({
+        area: [],
+        prefix: [],
+        line : []
+      });
+
+      
+    }
 
 }

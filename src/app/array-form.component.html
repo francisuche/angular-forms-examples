@@ -1,0 +1,43 @@
+ <h1> My Form </h1>
+ 
+ {{myForm.value | json}}
+
+<form [formGroup] ="myForm">
+    
+<hr>
+<mat-form-field appearance="fill">
+    <input matInput placeholder = "email" formControlName = "email">
+</mat-form-field>
+
+
+<h1> CellPhone </h1>
+<div formGroupName =  "cellPhone">
+    <mat-form-field appearance="fill">
+      <input matInput placeholder = "area" formControlName = "area">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input matInput placeholder = "prefix" formControlName = "prefix">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input matInput placeholder = "line" formControlName = "line">
+    </mat-form-field>
+</div>
+
+<h1> HomePhone </h1>
+<div formGroupName =  "homePhone">
+    <mat-form-field appearance="fill">
+      <input matInput placeholder = "area" formControlName = "area">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input matInput placeholder = "prefix" formControlName = "prefix">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input matInput placeholder = "line" formControlName = "line">
+    </mat-form-field>
+</div>
+
+  </form>

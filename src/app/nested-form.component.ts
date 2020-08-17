@@ -16,7 +16,7 @@ export class NestedFormComponent implements OnInit{
   constructor(private fb: FormBuilder){
   };
 
-  phone : FormGroup[];
+  //phone : FormGroup[];
 
   ngOnInit(){
 

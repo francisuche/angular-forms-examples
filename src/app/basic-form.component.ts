@@ -22,7 +22,7 @@ export class BasicFormComponent implements OnInit{
       email: '',
       message: 'default message',
       career: ''
-    })
+    });
 
     this.myForm.valueChanges.subscribe(console.log)
 

@@ -1,16 +1,25 @@
 <form [formGroup] ="myForm">
-
      {{myForm.value | json}}
 
      <hr>
-
+     
       <mat-form-field appearance="fill">
     <mat-label>Input</mat-label>
-    <input matInput>
+    <input matInput formControlName = "email">
   </mat-form-field>
+
 
    <mat-form-field appearance="fill">
     <mat-label>Text Area</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput formControlName = "message"></textarea>
   </mat-form-field>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Select</mat-label>
+    <mat-select>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+  </mat-form-field>
+
   </form>

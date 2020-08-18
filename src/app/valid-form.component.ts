@@ -31,7 +31,8 @@ export class ValidFormComponent implements OnInit{
       ]],
       password : ['',[
         Validators.required,
-        Validators.pattern(/^(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?=.{9,})/)
+        Validators.pattern(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/)
+        //password example: Xyz12345
       ]],
       age :[null, [
         Validators.required,

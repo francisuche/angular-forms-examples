@@ -1,5 +1,5 @@
 import { Component, OnInit }  from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators} from '@angular/forms';
 
 //formGroup is the class we use to tie different form controls into one group
 //formBuilder makes it easier to build forms
@@ -25,28 +25,40 @@ export class ValidFormComponent implements OnInit{
     })
 
     this.myForm = this.fb.group({  //schema that defines the validation stauts and fields in your form
-      email : '',
-      phones : this.fb.array([])
+      email : ['',[
+        Validators.required,
+        Validators.email
+      ]],
+      password : ['',[
+        Validators.required,
+        Validators.pattern('^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$')
+      ]],
+      age :[null, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.min(18),
+        Validators.max(65)
+      ]],
+      agree : [false, [
+        Validators.requiredTrue
+      ]]
     });
     
     this.myForm.valueChanges.subscribe(console.log)
+    this.myForm.statusChanges.subscribe(console.log)
   }
 
-  get PhoneForms(){
-    return this.myForm.get('phones') as FormArray;
+  get email(){
+    return this.myForm.get('email');
   }
 
-   addNewPhone(){
-     const newPhone : FormGroup = this.fb.group({
-        area: [],
-        prefix: [],
-        line : []
-      });
-      this.PhoneForms.push(newPhone);
-    }
-
-    deletePhone(i){
-            this.PhoneForms.removeAt(i);
-    }
-
+  get password(){
+    return this.myForm.get('password');
+  }
+  get age(){
+    return this.myForm.get('age');
+  }
+  get agree(){
+    return this.myForm.get('agree');
+  }
 }

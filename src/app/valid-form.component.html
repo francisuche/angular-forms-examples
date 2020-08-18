@@ -7,34 +7,47 @@
     
     
 <hr>
+<h1> Email </h1>
 <mat-form-field appearance="fill">
     <input matInput placeholder = "email" formControlName = "email">
+
+    <mat-error color = "red" *ngIf = "email.invalid && email.touched"> Your email does not look right
+    </mat-error>
 </mat-form-field>
 
 
-<h1> Phone </h1>
+<h1> Password </h1>
+
+<mat-form-field appearance="fill">
+    <input matInput placeholder = "password" formControlName = "password" type = "password">
+
+    <mat-hint align = "red"> Must have 8 characters, one letter, and one number, and one special character</mat-hint>
+    <mat-error color = "red" *ngIf = "password.invalid && password.touched"> your
+      password is invalid!
+    </mat-error>
+</mat-form-field>
+
+<div style = "margin-top:100px">
+  <h1> Age </h1>
+  <mat-form-field appearance="fill">
+    <input matInput placeholder = "age" [value] = "0" formControlName = "age" type = "number">
+
+    <mat-error *ngIf="age.errors?.min && age.touched">
+      {{age.errors.min.actual}} is too young to use this app kiddo!
+    </mat-error>
+
+    <mat-error *ngIf="age.errors?.max && age.touched">
+      {{age.errors.max.actual}} is too old to use this app gramps!
+    </mat-error>
+
+    <mat-checkbox style = "margin-top:100px" formControlName ="agree" color = "primary"> Are you sure? </mat-checkbox>
+
+    <button style = "margin-top: 50px" mat-raised-button [disabled] = "myForm.invalid" color = "primary"> Let's do this </button>
 
 
 
-<div formArrayName = "phones">
-  <div *ngFor = "let phone of PhoneForms.controls; let i = index" [formGroupName] = "i">
-       <h1> {{"Phone" + (i+1) }}</h1>
-          <mat-form-field appearance="fill">
-            <input matInput placeholder = "area" formControlName = "area">
-          </mat-form-field>
+  </mat-form-field>
+</div>
 
-          <mat-form-field appearance="fill">
-            <input matInput placeholder = "prefix" formControlName = "prefix">
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <input matInput placeholder = "line" formControlName = "line">
-          </mat-form-field>
-
-          <button mat-raised-button  (click) = "deletePhone(i)" style= "margin-bottom : 20px"> Delete </button>
-    </div>
-  </div>
-
-  <button mat-raised-button color= "primary" (click) = "addNewPhone()" style= "margin-bottom : 20px"> Add new Phone </button>
 
   </form>
